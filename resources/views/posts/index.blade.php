@@ -4,17 +4,17 @@
     <x-slot name='title'>Home posts</x-slot>
 
 
-    <a href="/posts/create">Nuevo post</a>
+    <a href="{{route('posts.create')}}">Nuevo post</a>
 
     {{-- Slot --}}
-    @foreach ($posts as $post)
     <ul>
-        <li>
-            <a href="/posts/{{$post->id}}">{{$post->title}}</a>
-        </li>
+        @foreach ($posts as $post)
+            <li>
+                <a href="{{route('posts.show',$post->id)}}">{{$post->title}}</a>
+            </li>
+        @endforeach
     </ul>
-    @endforeach
-    
+    {{$posts->links()}}
 
 </x-app-layout>
     

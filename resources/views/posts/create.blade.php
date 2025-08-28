@@ -2,7 +2,7 @@
 <x-app-layout>
     {{-- titulo --}}
     <x-slot name='title'>Create a new post</x-slot>
-    <a href="/posts/">Volver a post</a>
+    <a href="{{route('posts.index')}}">Volver a post</a>
     {{-- Slot --}}
     <form action="/posts" method="POST">
         @csrf

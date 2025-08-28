@@ -1,10 +1,10 @@
 <x-app-layout>
     {{-- titulo --}}
     <x-slot name='title'>Actualizar post: {{$post->title}}</x-slot>
-    <a href="/posts/">Volver a post</a>
+    <a href="{{route('posts.index')}}">Volver a post</a>
 
     {{-- Slot --}}
-    <form action="/posts/{{$post->id}}" method="POST">
+    <form action="{{route('posts.update', $post)}}" method="POST">
         @csrf
         @method('PUT')
         <label for="">
